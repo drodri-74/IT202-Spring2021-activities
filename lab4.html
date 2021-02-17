@@ -36,20 +36,21 @@
 
 
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous">
-      fetch("https://data.cityofchicago.org/resource/x8fc-8rcq.json")
-.then ((Response) => {
-return Response.json()
-})
-.then ((json) => {
-for(let r in json){
-let iclone = document.querySelector(".container");
-document.querySelector("body").append(iclone);
-console.log(r.name_)
-}
-})
-      </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
 
-    
-  </body>
+    <script>
+      let url = "https://data.cityofchicago.org/resource/x8fc-8rcq.json"
+      let template = document.querySelector(".card")
+        fetch(url)
+            .then ((Response) => {
+            return Response.json()})
+            .then ((data) => {
+                data.forEach((item) =>{
+                    let clone = template.cloneNode(true);
+                    let title = clone.querySelector("h5.card-title");
+                    title.innetText = item.name_;
+                    template.parentElement.append(clone); })})
+      </script>
+  
+    </body>
 </html>
