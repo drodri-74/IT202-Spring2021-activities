@@ -2,7 +2,7 @@
 <html>
   <head>
     <title>Simple Map</title>
-    <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+   
     <style type="text/css">
       /* Always set the map height explicitly to define the size of the div
        * element that contains the map. */
@@ -22,7 +22,7 @@
       let map;
 
       function initMap() {
-        map = new google.maps.Map(document.getElementById("map"), {
+        map = new google.maps.Map(document.querySelector("#map"), {
           center: { lat: 21.67081548211613, lng: -102.5862958853968 },
           zoom: 8,
         });
@@ -34,7 +34,7 @@
 
     <!-- Async script executes immediately and must be after any DOM elements used in callback. -->
     <script
-      src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap&libraries=&v=weekly"
+      src="https://maps.googleapis.com/maps/api/js?key=9ylvekT3HtHjEex1Kkit9qPgxCAfFyprLzMpZKZv&callback=initMap&libraries=&v=weekly"
       async
     ></script>
   </body>
