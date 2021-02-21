@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>repl.it</title>
+  </head>
+  <body>
+    <h1>Form Basics</h1>
+      <form id="form1" name="form1">
+          <label for="text1">Text1:
+          </label>
+          <input type="text1" id="text1" name="text1"/><br>
+          
+          <input type="radio" name="radio1"  value="red" />Red 
+          
+          <input type="radio" name="radio1"  value="green" />Green
+          
+          <input type="radio" name="radio1"  value="blue" />Blue<br>
+          
+          <label for="select1">Favorite lecture day:
+          
+          <select name="select1" id="select1">
+              <option value=""></option>
+              <option value="Mon">Mon</option>
+              <option value="Wed">Wed</option>
+              <option value="Fri">Fri</option>
+          </select><br><br>
+          </label>
+          
+          <textarea id="textarea1" name="textarea1" placeholder="Please provide any additional feedback">
+          </textarea>
+      </form>
+
+
+
+    <p id="uptonSinclairQuote">
+It is difficult to get a man to understand something, when his salary depends upon his not understanding it! -- Upton Sinclair
+    </p>
+
+
+    <script>
+           
+        document.querySelector("#text1").value = "Danny Rodriguez";
+        document.querySelector("input[value=green]").checked = true;
+        document.querySelector("textarea").value = document.querySelector("p").innerText;
+        let s = document.querySelector("#select1");
+        s.addEventListener("change", event => {
+            let result = document.querySelector(".result");
+            result.textContent = "You selected: ${event.value}";
+});
+
+
+    </script>
+  </body>
+</html>

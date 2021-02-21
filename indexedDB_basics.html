@@ -1,0 +1,57 @@
+<!doctype html>
+<html>
+  <head>
+      <!-- Include Dexie -->
+      <script src="https://unpkg.com/dexie@latest/dist/dexie.js"></script>
+
+      <script>
+          //
+          // Define your database
+          //
+          var db = new Dexie("Dexie");
+          db.version(1).stores({
+              schools: 'long_name.student_attainment_rating, student_attendance_year_1'
+          });
+          
+          
+
+          
+          .catch(function(error) {
+             //
+             // Finally don't forget to catch any error
+             // that could have happened anywhere in the
+             // code blocks above.
+             //
+             alert ("Ooops: " + error);
+          });
+      </script>
+  </head>
+</html><!doctype html>
+<html>
+  <head>
+      <!-- Include Dexie -->
+      <script src="https://unpkg.com/dexie@latest/dist/dexie.js"></script>
+
+      <script>
+          
+          
+          //
+          // Define your database
+          //
+          var db = new Dexie("Dexie");
+          db.version(1).stores({
+              schools: 'long_name.student_attainment_rating, student_attendance_year_1'
+          });
+
+          
+          .catch(function(error) {
+             //
+             // Finally don't forget to catch any error
+             // that could have happened anywhere in the
+             // code blocks above.
+             //
+             alert ("Ooops: " + error);
+          });
+      </script>
+  </head>
+</html>
