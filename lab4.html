@@ -48,7 +48,7 @@
     </script>
 
     <script>
-      let url = "https://data.cityofchicago.org/resource/x8fc-8rcq.json";
+     let url = "https://data.cityofchicago.org/resource/x8fc-8rcq.json";
      let template = document.querySelector(".card");
      fetch(url)
      .then((response) => { return response.json(); })
@@ -62,9 +62,9 @@
            
              h5.innerText = item.name_;
              h6.innerText = item.hours_of_operation;
-             text.innerText = item.city + item.state + item.zip + item.phone;
+             text.innerText = item.city +" "+ item.state +" "+ item.zip +" "+ item.phone;
             
-             clone.classList.remove("card");
+             clone.classList.remove(".card");
              template.parentElement.append(clone);
          
          })})
