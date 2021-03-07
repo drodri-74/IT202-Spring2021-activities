@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<canvas id="myCanvas" width="500" height="500"></canvas>
+
+<script>
+let c = document.getElementById("myCanvas");
+c.style.backgroundColor = "grey";
+let ctx = c.getContext("2d");
+    
+    
+     for(let i=0;i<2000;i++){
+   ctx.strokeStyle ="#" +  Math.floor(Math.random()*0xFFFFFF).toString(16);
+   ctx.beginPath();
+   ctx.arc(Math.floor(Math.random()*(1000)+1) , Math.floor(Math.random()*(800)+1), Math.floor(Math.random()*(2)+1), 0 ,2*Math.PI);
+   ctx.stroke();
+   ctx.closePath();
+}
+    ctx.beginPath();
+    ctx.arc(75, 280, 50, 0, 2 * Math.PI);
+    ctx.fillStyle = "red";
+    ctx.fill();
+    ctx.stroke();
+    ctx.closePath();
+    
+        ctx.font = "30px Verdana";
+// Create gradient
+
+let gradient = ctx.createLinearGradient(0, 0, c.width, 0);
+gradient.addColorStop("0", "white");
+gradient.addColorStop("0.5", "silver");
+gradient.addColorStop("1.0", "blue");
+
+// Fill with gradient
+ctx.strokeStyle = gradient;
+ctx.strokeText("Danny Rodriguez", 10, 90);
+    
+    ctx.shadowColor = "red";
+    ctx.shadowBlur = 20;
+    ctx.beginPath();
+    ctx.rect(20,110,150,100);
+    ctx.fillStyle = "blue";
+    ctx.fill();
+    ctx.stroke();
+    ctx.closePath();
+    
+
+    
+    
+
+
+</script> 
+
+</body>
+</html>
