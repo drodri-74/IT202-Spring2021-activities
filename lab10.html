@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width">
+    <title>lab10</title>
+    
+</head>
+<body>
+<form>
+    
+    
+    <input type="text" id="text">
+    
+    <select id="language">
+        
+        <option></option>
+        
+        
+    </select>
+<div>
+    
+    <button type="button" id="button" disabled>Speak</button>
+    
+    </div>
+    
+</form>
+    
+    <script>
+    
+
+        let inputForm = document.querySelector('form');
+        let inputTxt = document.querySelector('#text');
+        let voiceSelect = document.querySelector('select');
+
+        window.speechSynthesis.onvoiceschanged = function(){
+          let voices = window.speechSynthesis.getVoices();
+            for (let i = 0; i< voices.length; i++){
+                let option = document.createElement('option');
+                option.textContent = voices[i].name + ' (' + voices[i].lang + ')';
+                if (voices[i].default){
+                    option.textContent += ' -- DEFAULT';
+                }
+                option.setAttribute('data-lang', voices[i].lang);
+                option.setAttribute('data-name', voices[i].name);
+                voiceSelect.appendChild(option);
+
+                } 
+            inputForm.onsubmit = function (event){
+                let utterThis = new SpeechSynthesisUtterance(inputTxt.value);
+                let selectedOption = voiceSelect.selectedOptions[0].getAttribute('data-name');
+                for(let j = 0; j < voices.length; j++){
+                    if(voices[j].name === selectedOption){
+                        console.log(voices[j]);
+                        utterThis.voice = voices[j];
+                        
+                    }
+                }
+                window.speechSynthesis.speak(utterThis);
+            }
+            };
+        
+        
+    
+    </script>
+</body>
+</html>
